@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#070508">
+<meta name="theme-color" content="#070304">
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <title>Shubh Navratri • A Divine Celebration</title>
@@ -22,41 +22,41 @@ html{
 }
 
 body{
-  background:#070508;
+  background:#070304;
   color:#fff;
   font-family:Poppins,sans-serif;
   overflow-x:hidden;
 }
 
-/* ---------- BACKGROUND ---------- */
-
 body::before{
   content:"";
   position:fixed;
   inset:0;
+  z-index:-5;
   background:
-    radial-gradient(circle at 50% 20%,rgba(150,35,15,.22),transparent 35%),
-    radial-gradient(circle at 20% 80%,rgba(180,100,10,.12),transparent 30%),
-    linear-gradient(145deg,#050407,#10070a 50%,#050407);
-  z-index:-3;
+    radial-gradient(circle at 50% 20%,rgba(130,25,12,.25),transparent 38%),
+    radial-gradient(circle at 20% 80%,rgba(120,50,10,.12),transparent 35%),
+    linear-gradient(145deg,#040304,#120507 50%,#050304);
 }
+
+/* PARTICLES */
 
 #particles{
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:10;
+  z-index:20;
 }
 
 .particle{
   position:absolute;
   width:3px;
   height:3px;
-  background:#e9b84b;
   border-radius:50%;
-  box-shadow:0 0 10px #e9b84b;
+  background:#e7b64b;
+  box-shadow:0 0 12px #e7b64b;
   animation:floatUp linear infinite;
-  opacity:.7;
+  opacity:.65;
 }
 
 @keyframes floatUp{
@@ -65,46 +65,51 @@ body::before{
     opacity:0;
   }
   15%{opacity:.8}
-  85%{opacity:.6}
+  80%{opacity:.5}
   to{
     transform:translateY(-10vh) scale(1.2);
     opacity:0;
   }
 }
 
-/* ---------- ENTRY ---------- */
+/* ENTRY */
 
 #entry{
   position:fixed;
   inset:0;
-  background:
-    radial-gradient(circle at center,rgba(120,25,15,.35),transparent 45%),
-    #050407;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
   z-index:100;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  background:
+    radial-gradient(circle at center,
+    rgba(125,28,15,.35),
+    transparent 45%),
+    #050304;
+
   transition:1.2s ease;
 }
 
 #entry.hide{
   opacity:0;
   visibility:hidden;
-  transform:scale(1.08);
+  transform:scale(1.06);
 }
 
 .om{
-  font-size:75px;
-  color:#e7b84a;
+  font-size:72px;
+  color:#e5b64f;
   text-shadow:
-    0 0 15px rgba(231,184,74,.6),
-    0 0 45px rgba(160,40,15,.5);
-  animation:pulse 2.5s infinite;
+    0 0 15px rgba(230,180,70,.5),
+    0 0 50px rgba(170,50,20,.4);
+
+  animation:omPulse 2.5s infinite;
 }
 
-@keyframes pulse{
+@keyframes omPulse{
   0%,100%{transform:scale(1)}
   50%{transform:scale(1.08)}
 }
@@ -112,51 +117,65 @@ body::before{
 .entry-line{
   width:110px;
   height:1px;
-  background:linear-gradient(90deg,transparent,#d9a63d,transparent);
-  margin:25px 0;
+  margin:24px 0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #d6a441,
+    transparent
+  );
 }
 
 .entry-small{
-  letter-spacing:4px;
-  font-size:11px;
-  color:#c9a866;
+  color:#b99755;
+  letter-spacing:5px;
+  font-size:10px;
 }
 
 .entry-title{
   font-family:Cinzel,serif;
-  font-size:clamp(28px,8vw,52px);
-  margin:14px 0 8px;
-  color:#f3d48a;
+  color:#f0cd7d;
+  font-size:clamp(35px,9vw,58px);
+  margin:15px 0 8px;
 }
 
 .entry-sub{
-  color:#aaa;
-  font-size:13px;
-  letter-spacing:1px;
+  color:#999;
+  font-size:12px;
 }
 
 .enter-btn{
   margin-top:38px;
   padding:15px 30px;
-  border:1px solid #c99a3b;
+
+  border:1px solid #c99b42;
   border-radius:50px;
-  background:linear-gradient(135deg,#3d160d,#130a08);
-  color:#f1ca72;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3c120c,
+      #100607
+    );
+
+  color:#edc86e;
+
   font-family:Cinzel,serif;
   letter-spacing:2px;
-  cursor:pointer;
+
   box-shadow:
-    0 0 25px rgba(194,130,30,.18),
-    inset 0 0 20px rgba(200,140,40,.08);
+    0 0 25px rgba(205,145,40,.15),
+    inset 0 0 20px rgba(200,130,30,.08);
+
+  cursor:pointer;
   transition:.3s;
 }
 
-.enter-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 0 35px rgba(225,170,55,.35);
+.enter-btn:active{
+  transform:scale(.96);
 }
 
-/* ---------- GENERAL ---------- */
+/* GENERAL */
 
 section{
   min-height:100vh;
@@ -172,14 +191,10 @@ section{
   margin:auto;
 }
 
-.gold{
-  color:#e4b955;
-}
-
 .section-label{
   text-align:center;
-  color:#b58c43;
-  letter-spacing:4px;
+  color:#b78d46;
+  letter-spacing:5px;
   font-size:10px;
   margin-bottom:12px;
 }
@@ -187,76 +202,65 @@ section{
 .section-title{
   text-align:center;
   font-family:Cinzel,serif;
-  color:#f0d18a;
-  font-size:clamp(28px,7vw,48px);
+  color:#f0cd80;
+  font-size:clamp(30px,8vw,52px);
 }
 
 .divider{
-  width:90px;
+  width:95px;
   height:1px;
-  margin:22px auto 40px;
-  background:linear-gradient(90deg,transparent,#d6a541,transparent);
+  margin:22px auto 45px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d5a442,
+      transparent
+    );
 }
 
-/* ---------- HERO ---------- */
+/* HERO */
 
 .hero{
   min-height:100svh;
   overflow:hidden;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  border:1px solid rgba(216,168,65,.13);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 35px rgba(216,168,65,.025),
-    0 0 0 70px rgba(216,168,65,.018);
-  animation:rotate 35s linear infinite;
-}
-
-@keyframes rotate{
-  to{transform:rotate(360deg)}
+  text-align:center;
 }
 
 .hero-content{
-  text-align:center;
   position:relative;
   z-index:2;
 }
 
-.trident{
-  font-size:70px;
-  color:#d9a63e;
-  text-shadow:0 0 30px rgba(220,155,40,.5);
-  margin-bottom:15px;
+.hero-symbol{
+  font-size:60px;
+  color:#dcae48;
+  margin-bottom:20px;
+  text-shadow:
+    0 0 30px rgba(225,165,55,.35);
 }
 
 .hero h1{
   font-family:Cinzel,serif;
-  font-size:clamp(42px,12vw,85px);
+  font-size:clamp(45px,12vw,90px);
   line-height:1;
-  color:#f1d28a;
-  text-shadow:0 5px 30px rgba(200,120,30,.25);
+  color:#f0cf86;
 }
 
 .hero h2{
-  margin-top:15px;
-  font-size:13px;
-  font-weight:400;
+  margin-top:18px;
+  color:#b9a98c;
+  font-size:11px;
   letter-spacing:3px;
-  color:#c9b99b;
+  font-weight:400;
 }
 
 .blessing{
-  max-width:550px;
+  max-width:560px;
   margin:35px auto 0;
-  font-size:14px;
+  color:#999;
+  font-size:13px;
   line-height:1.9;
-  color:#aaa;
 }
 
 .scroll{
@@ -264,140 +268,238 @@ section{
   bottom:35px;
   left:50%;
   transform:translateX(-50%);
-  color:#a98950;
-  font-size:10px;
+  color:#927342;
   letter-spacing:3px;
+  font-size:9px;
 }
 
-/* ---------- DURGA ART ---------- */
+/* ========================= */
+/* MAA DURGA SECTION */
+/* ========================= */
 
-.durga-box{
-  width:min(500px,90vw);
-  height:520px;
-  margin:0 auto 50px;
+.durga-section{
+  overflow:hidden;
+}
+
+.durga-wrap{
+  width:min(600px,100%);
+  margin:auto;
   position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
 }
 
-.mandala{
-  position:absolute;
-  width:390px;
-  height:390px;
-  border:1px solid rgba(218,169,67,.35);
-  border-radius:50%;
-  box-shadow:
-    0 0 50px rgba(172,68,20,.18),
-    inset 0 0 50px rgba(172,68,20,.12);
-  animation:rotate 30s linear infinite;
-}
-
-.mandala::before,
-.mandala::after{
-  content:"";
-  position:absolute;
-  inset:35px;
-  border:1px solid rgba(218,169,67,.28);
-  transform:rotate(45deg);
-}
-
-.mandala::after{
-  transform:rotate(22.5deg);
-}
-
-.durga-symbol{
+.durga-frame{
   position:relative;
-  z-index:2;
-  text-align:center;
-}
+  width:100%;
+  border-radius:28px;
+  overflow:hidden;
 
-.durga-symbol .crown{
-  font-size:80px;
-  color:#dcae4c;
-  text-shadow:0 0 30px rgba(218,165,60,.4);
-}
-
-.durga-face{
-  width:190px;
-  height:230px;
-  margin:-8px auto 0;
-  border-radius:48% 48% 45% 45%;
   background:
-    radial-gradient(circle at 38% 42%,#111 0 4px,transparent 5px),
-    radial-gradient(circle at 62% 42%,#111 0 4px,transparent 5px),
-    linear-gradient(145deg,#d88955,#f2bb82 50%,#a94f32);
+    linear-gradient(
+      145deg,
+      #160706,
+      #050304
+    );
+
+  border:1px solid rgba(210,160,62,.25);
+
   box-shadow:
-    0 0 50px rgba(205,106,44,.25);
-  position:relative;
+    0 30px 100px rgba(0,0,0,.65),
+    0 0 60px rgba(125,35,15,.12);
 }
 
-.durga-face::before{
+.durga-frame::before{
   content:"";
   position:absolute;
-  width:70px;
-  height:22px;
-  border-bottom:2px solid #5b201d;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(4,2,3,.7) 100%
+    );
+}
+
+.durga-image{
+  width:100%;
+  display:block;
+  object-fit:cover;
+
+  transform:scale(1.01);
+
+  filter:
+    saturate(1.05)
+    contrast(1.05);
+
+  transition:transform 1.5s ease;
+}
+
+.durga-frame:hover .durga-image{
+  transform:scale(1.04);
+}
+
+.durga-glow{
+  position:absolute;
+  width:250px;
+  height:250px;
+
+  left:50%;
+  top:45%;
+
+  transform:translate(-50%,-50%);
+
   border-radius:50%;
-  bottom:58px;
-  left:60px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(215,157,48,.12),
+      transparent 70%
+    );
+
+  pointer-events:none;
+  z-index:1;
 }
 
-.durga-face::after{
-  content:"";
-  position:absolute;
-  width:12px;
-  height:12px;
-  background:#9c1717;
-  border-radius:50%;
-  top:65px;
-  left:89px;
-  box-shadow:0 0 12px #e0a43b;
+.durga-caption{
+  text-align:center;
+  max-width:650px;
+  margin:35px auto 0;
+
+  color:#999;
+  font-size:13px;
+  line-height:1.9;
 }
 
-.trident-large{
+/* GOLD DECORATION */
+
+.gold-corner{
   position:absolute;
-  left:-65px;
-  top:90px;
-  font-size:90px;
-  color:#d6a541;
-  transform:rotate(-12deg);
+  width:55px;
+  height:55px;
+  border-color:#c99a3c;
+  opacity:.7;
+  z-index:4;
 }
 
-.lion{
-  font-size:100px;
-  position:absolute;
-  right:-55px;
-  bottom:25px;
-  filter:sepia(1) saturate(.7);
+.gold-corner.tl{
+  top:15px;
+  left:15px;
+  border-top:1px solid;
+  border-left:1px solid;
 }
+
+.gold-corner.tr{
+  top:15px;
+  right:15px;
+  border-top:1px solid;
+  border-right:1px solid;
+}
+
+.gold-corner.bl{
+  bottom:15px;
+  left:15px;
+  border-bottom:1px solid;
+  border-left:1px solid;
+}
+
+.gold-corner.br{
+  bottom:15px;
+  right:15px;
+  border-bottom:1px solid;
+  border-right:1px solid;
+}
+
+/* DIYA */
 
 .diyas{
   display:flex;
   justify-content:center;
-  gap:22px;
+  gap:25px;
   margin-top:35px;
 }
 
 .diya{
-  font-size:28px;
-  filter:drop-shadow(0 0 8px #f1ad38);
-  animation:flame 1.4s ease-in-out infinite alternate;
+  position:relative;
+  width:32px;
+  height:17px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d18c2b,
+      #70400f
+    );
+
+  border-radius:0 0 20px 20px;
+
+  box-shadow:
+    0 8px 20px rgba(220,130,30,.2);
 }
 
-.diya:nth-child(2){animation-delay:.4s}
-.diya:nth-child(3){animation-delay:.8s}
+.diya::before{
+  content:"";
+  position:absolute;
+  width:11px;
+  height:17px;
+
+  left:50%;
+  top:-14px;
+
+  transform:translateX(-50%);
+
+  border-radius:50% 50% 45% 45%;
+
+  background:
+    radial-gradient(
+      circle at 50% 70%,
+      #fff2a1 0 15%,
+      #ffb52e 35%,
+      #d55b12 70%,
+      transparent 72%
+    );
+
+  filter:
+    drop-shadow(0 0 7px #ff9d25);
+
+  animation:flame 1.3s ease-in-out infinite alternate;
+}
+
+.diya:nth-child(2)::before{
+  animation-delay:.4s;
+}
+
+.diya:nth-child(3)::before{
+  animation-delay:.8s;
+}
 
 @keyframes flame{
-  from{transform:scale(.92) rotate(-2deg)}
-  to{transform:scale(1.08) rotate(2deg)}
+  from{
+    transform:
+      translateX(-50%)
+      scale(.9)
+      rotate(-3deg);
+  }
+
+  to{
+    transform:
+      translateX(-50%)
+      scale(1.1)
+      rotate(3deg);
+  }
 }
 
-/* ---------- NIGHTS ---------- */
+/* NINE NIGHTS */
 
 .nights{
   background:
-    radial-gradient(circle at center,rgba(120,35,20,.12),transparent 55%);
+    radial-gradient(
+      circle at center,
+      rgba(120,30,15,.13),
+      transparent 55%
+    );
 }
 
 .night-grid{
@@ -410,44 +512,41 @@ section{
 
 .night{
   aspect-ratio:1;
-  border:1px solid rgba(205,159,62,.28);
+
+  border:1px solid rgba(205,159,62,.25);
   border-radius:18px;
-  background:linear-gradient(145deg,rgba(38,15,13,.9),rgba(11,8,10,.9));
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(40,13,12,.9),
+      rgba(10,7,8,.95)
+    );
+
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  cursor:pointer;
-  transition:.3s;
-  position:relative;
-  overflow:hidden;
-}
 
-.night::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle,rgba(214,160,55,.13),transparent 65%);
-  opacity:0;
-  transition:.3s;
+  cursor:pointer;
+
+  transition:.35s;
 }
 
 .night:hover,
 .night.active{
   transform:translateY(-5px);
-  border-color:#d9a53f;
-  box-shadow:0 10px 35px rgba(190,120,25,.14);
-}
 
-.night:hover::before,
-.night.active::before{
-  opacity:1;
+  border-color:#d9a53f;
+
+  box-shadow:
+    0 12px 35px rgba(190,120,25,.14);
 }
 
 .night-number{
   font-family:Cinzel,serif;
-  font-size:27px;
-  color:#e1b453;
+  font-size:28px;
+  color:#e2b555;
 }
 
 .night-name{
@@ -455,17 +554,20 @@ section{
   font-size:10px;
   color:#aaa;
   text-align:center;
-  padding:0 5px;
 }
 
 .night-info{
-  margin:30px auto 0;
   max-width:650px;
   min-height:120px;
+
+  margin:30px auto 0;
   padding:25px;
+
   text-align:center;
+
   border:1px solid rgba(203,155,60,.2);
   border-radius:20px;
+
   background:rgba(25,10,10,.5);
 }
 
@@ -481,78 +583,106 @@ section{
   line-height:1.8;
 }
 
-/* ---------- GARBA ---------- */
-
-.garba{
-  overflow:hidden;
-}
+/* GARBA */
 
 .garba-stage{
   width:min(650px,100%);
-  height:420px;
+  height:400px;
   margin:auto;
+
   position:relative;
+
   border:1px solid rgba(211,162,60,.2);
   border-radius:30px;
+
   background:
-    radial-gradient(circle at center,rgba(158,55,22,.2),transparent 45%),
-    #0a0709;
+    radial-gradient(
+      circle at center,
+      rgba(145,45,18,.2),
+      transparent 48%
+    ),
+    #080507;
+
   overflow:hidden;
-  box-shadow:0 20px 70px rgba(0,0,0,.5);
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.55);
 }
 
 .garba-mandala{
   position:absolute;
+
   width:280px;
   height:280px;
+
   left:50%;
   top:50%;
-  transform:translate(-50%,-50%);
-  border:1px solid rgba(221,172,64,.4);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 20px rgba(221,172,64,.03),
-    0 0 0 45px rgba(221,172,64,.025),
-    0 0 70px rgba(192,72,24,.2);
-  animation:spin 12s linear infinite;
-}
 
-@keyframes spin{
-  to{transform:translate(-50%,-50%) rotate(360deg)}
+  transform:translate(-50%,-50%);
+
+  border:1px solid rgba(220,170,62,.4);
+  border-radius:50%;
+
+  box-shadow:
+    0 0 0 25px rgba(220,170,62,.03),
+    0 0 0 50px rgba(220,170,62,.02),
+    0 0 70px rgba(190,70,20,.15);
+
+  animation:spin 14s linear infinite;
 }
 
 .garba-mandala::before{
   content:"✦";
   position:absolute;
   inset:0;
+
   display:flex;
-  align-items:center;
   justify-content:center;
-  color:#e5b84e;
+  align-items:center;
+
+  color:#e2b34b;
   font-size:65px;
+}
+
+@keyframes spin{
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotate(360deg);
+  }
 }
 
 .dancer{
   position:absolute;
-  color:#dba83f;
-  font-size:65px;
+  color:#d9a640;
+  font-size:55px;
+
   animation:dance 2s ease-in-out infinite alternate;
 }
 
 .dancer.one{
   left:8%;
-  top:35%;
+  top:38%;
 }
 
 .dancer.two{
   right:8%;
-  top:35%;
+  top:38%;
   animation-delay:1s;
 }
 
 @keyframes dance{
-  from{transform:rotate(-8deg) translateY(8px)}
-  to{transform:rotate(8deg) translateY(-8px)}
+  from{
+    transform:
+      rotate(-7deg)
+      translateY(8px);
+  }
+
+  to{
+    transform:
+      rotate(7deg)
+      translateY(-8px);
+  }
 }
 
 .garba-text{
@@ -560,50 +690,66 @@ section{
   bottom:25px;
   width:100%;
   text-align:center;
-  letter-spacing:3px;
+
   color:#caa45c;
   font-size:10px;
+  letter-spacing:3px;
 }
 
-/* ---------- FOOTER ---------- */
+/* FINAL */
 
 .final{
   min-height:75vh;
   text-align:center;
 }
 
-.final .om{
+.final-om{
   font-size:55px;
+  color:#e3b44d;
+
+  text-shadow:
+    0 0 25px rgba(225,170,55,.4);
 }
 
 .final h2{
   font-family:Cinzel,serif;
-  font-size:clamp(35px,9vw,65px);
+
+  font-size:
+    clamp(38px,10vw,70px);
+
   color:#edca7c;
+
   margin:20px 0;
 }
 
 .final p{
-  color:#aaa;
   max-width:500px;
   margin:auto;
+
+  color:#999;
+
   line-height:1.9;
   font-size:13px;
 }
 
 .footer{
   margin-top:70px;
-  color:#665c50;
+
+  color:#62594f;
   font-size:9px;
   letter-spacing:2px;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* MOBILE */
 
 @media(max-width:600px){
 
   section{
     padding:75px 16px;
+  }
+
+  .durga-frame{
+    border-radius:22px;
   }
 
   .night-grid{
@@ -622,36 +768,12 @@ section{
     font-size:8px;
   }
 
-  .durga-box{
-    height:440px;
-  }
-
-  .mandala{
-    width:300px;
-    height:300px;
-  }
-
-  .durga-face{
-    width:150px;
-    height:185px;
-  }
-
-  .trident-large{
-    left:-25px;
-    font-size:65px;
-  }
-
-  .lion{
-    right:-15px;
-    font-size:70px;
-  }
-
   .garba-stage{
     height:350px;
   }
 
   .dancer{
-    font-size:45px;
+    font-size:42px;
   }
 }
 </style>
@@ -661,7 +783,8 @@ section{
 
 <div id="particles"></div>
 
-<!-- ================= ENTRY ================= -->
+
+<!-- ENTRY -->
 
 <div id="entry">
 
@@ -688,13 +811,15 @@ section{
 </div>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
   <div class="hero-content">
 
-    <div class="trident">🔱</div>
+    <div class="hero-symbol">
+      ॐ
+    </div>
 
     <h1>
       SHUBH<br>NAVRATRI
@@ -710,9 +835,9 @@ section{
     </p>
 
     <div class="diyas">
-      <span class="diya">🪔</span>
-      <span class="diya">🪔</span>
-      <span class="diya">🪔</span>
+      <span class="diya"></span>
+      <span class="diya"></span>
+      <span class="diya"></span>
     </div>
 
   </div>
@@ -724,9 +849,9 @@ section{
 </section>
 
 
-<!-- ================= DURGA ================= -->
+<!-- MAA DURGA -->
 
-<section>
+<section class="durga-section">
 
   <div class="container">
 
@@ -740,30 +865,35 @@ section{
 
     <div class="divider"></div>
 
-    <div class="durga-box">
+    <div class="durga-wrap">
 
-      <div class="mandala"></div>
+      <div class="durga-frame">
 
-      <div class="durga-symbol">
+        <div class="gold-corner tl"></div>
+        <div class="gold-corner tr"></div>
+        <div class="gold-corner bl"></div>
+        <div class="gold-corner br"></div>
 
-        <div class="crown">♛</div>
+        <div class="durga-glow"></div>
 
-        <div class="durga-face"></div>
-
-        <div class="diyas">
-          <span class="diya">🪔</span>
-          <span class="diya">🪔</span>
-          <span class="diya">🪔</span>
-        </div>
+        <!-- YOUR GENERATED DURGA IMAGE -->
+        <img
+          src="durga.png"
+          alt="Maa Durga"
+          class="durga-image"
+        >
 
       </div>
 
-      <div class="trident-large">🔱</div>
-      <div class="lion">🦁</div>
+      <div class="diyas">
+        <span class="diya"></span>
+        <span class="diya"></span>
+        <span class="diya"></span>
+      </div>
 
     </div>
 
-    <p style="text-align:center;color:#999;font-size:13px;line-height:1.9;max-width:650px;margin:auto;">
+    <p class="durga-caption">
       Navratri celebrates the nine forms of Maa Durga,
       representing courage, wisdom, strength and divine protection.
     </p>
@@ -773,7 +903,7 @@ section{
 </section>
 
 
-<!-- ================= 9 NIGHTS ================= -->
+<!-- 9 NIGHTS -->
 
 <section class="nights">
 
@@ -854,9 +984,9 @@ section{
 </section>
 
 
-<!-- ================= GARBA ================= -->
+<!-- GARBA -->
 
-<section class="garba">
+<section>
 
   <div class="container">
 
@@ -874,8 +1004,8 @@ section{
 
       <div class="garba-mandala"></div>
 
-      <div class="dancer one">💃</div>
-      <div class="dancer two">🕺</div>
+      <div class="dancer one">✦</div>
+      <div class="dancer two">✦</div>
 
       <div class="garba-text">
         DANCE • DEVOTION • CELEBRATION
@@ -888,13 +1018,15 @@ section{
 </section>
 
 
-<!-- ================= FINAL ================= -->
+<!-- FINAL -->
 
 <section class="final">
 
   <div class="container">
 
-    <div class="om">ॐ</div>
+    <div class="final-om">
+      ॐ
+    </div>
 
     <h2>
       SHUBH<br>NAVRATRI
@@ -906,9 +1038,9 @@ section{
     </p>
 
     <div class="diyas">
-      <span class="diya">🪔</span>
-      <span class="diya">🪔</span>
-      <span class="diya">🪔</span>
+      <span class="diya"></span>
+      <span class="diya"></span>
+      <span class="diya"></span>
     </div>
 
     <div class="footer">
@@ -922,7 +1054,7 @@ section{
 
 <script>
 
-/* ================= PARTICLES ================= */
+/* PARTICLES */
 
 const particleContainer =
 document.getElementById("particles");
@@ -933,106 +1065,45 @@ for(let i=0;i<45;i++){
 
   p.className="particle";
 
-  p.style.left=Math.random()*100+"%";
+  p.style.left=
+    Math.random()*100+"%";
 
   p.style.animationDuration=
-  (7+Math.random()*10)+"s";
+    (7+Math.random()*10)+"s";
 
   p.style.animationDelay=
-  (-Math.random()*15)+"s";
+    (-Math.random()*15)+"s";
 
-  p.style.width=
-  p.style.height=
-  (1+Math.random()*3)+"px";
+  const size=
+    1+Math.random()*3;
+
+  p.style.width=size+"px";
+  p.style.height=size+"px";
 
   particleContainer.appendChild(p);
 }
 
 
-/* ================= ENTRY ================= */
-
-let audioStarted=false;
+/* ENTRY */
 
 function enterNavratri(){
 
-  document.getElementById("entry")
-  .classList.add("hide");
-
-  if(!audioStarted){
-    startDivineSound();
-    audioStarted=true;
-  }
+  document
+    .getElementById("entry")
+    .classList.add("hide");
 
   setTimeout(()=>{
+
     window.scrollTo({
       top:0,
       behavior:"smooth"
     });
+
   },400);
 }
 
 
-/* ================= DIVINE AMBIENT SOUND ================= */
-
-function startDivineSound(){
-
-  try{
-
-    const AudioContext =
-    window.AudioContext ||
-    window.webkitAudioContext;
-
-    const ctx=new AudioContext();
-
-    const master=ctx.createGain();
-
-    master.gain.value=.035;
-
-    master.connect(ctx.destination);
-
-    const notes=[
-      196,
-      261.63,
-      329.63
-    ];
-
-    notes.forEach((frequency,index)=>{
-
-      const oscillator=
-      ctx.createOscillator();
-
-      const gain=
-      ctx.createGain();
-
-      oscillator.type="sine";
-
-      oscillator.frequency.value=
-      frequency;
-
-      gain.gain.value=0;
-
-      oscillator.connect(gain);
-      gain.connect(master);
-
-      oscillator.start();
-
-      gain.gain.linearRampToValueAtTime(
-        .4,
-        ctx.currentTime+2+index
-      );
-
-    });
-
-  }catch(e){
-
-    console.log("Audio unavailable");
-
-  }
-
-}
-
-
-/* ================= NINE NIGHTS ================= */
+/* 9 NIGHTS */
 
 const nights={
 
@@ -1087,31 +1158,30 @@ const nights={
 function showNight(number){
 
   document
-  .querySelectorAll(".night")
-  .forEach((card,index)=>{
+    .querySelectorAll(".night")
+    .forEach((card,index)=>{
 
-    card.classList.toggle(
-      "active",
-      index===number-1
-    );
+      card.classList.toggle(
+        "active",
+        index === number-1
+      );
 
-  });
+    });
 
   const info=nights[number];
 
   document.getElementById("nightInfo")
-  .innerHTML=`
+    .innerHTML=`
 
-    <h3>${info.name}</h3>
+      <h3>${info.name}</h3>
 
-    <p>${info.text}</p>
+      <p>${info.text}</p>
 
-  `;
-
+    `;
 }
 
 
-/* ================= SCROLL REVEAL ================= */
+/* SCROLL REVEAL */
 
 const observer=
 new IntersectionObserver(
@@ -1122,7 +1192,9 @@ new IntersectionObserver(
     if(entry.isIntersecting){
 
       entry.target.style.opacity="1";
-      entry.target.style.transform="translateY(0)";
+
+      entry.target.style.transform=
+        "translateY(0)";
 
     }
 
@@ -1136,36 +1208,24 @@ new IntersectionObserver(
 
 document
 .querySelectorAll(
-".section-title,.section-label,.durga-box,.night-grid,.night-info,.garba-stage"
+".section-title,"+
+".section-label,"+
+".durga-wrap,"+
+".night-grid,"+
+".night-info,"+
+".garba-stage"
 )
 .forEach(el=>{
 
   el.style.opacity="0";
-  el.style.transform="translateY(25px)";
-  el.style.transition="1s ease";
+
+  el.style.transform=
+    "translateY(25px)";
+
+  el.style.transition=
+    "1s ease";
 
   observer.observe(el);
-
-});
-
-
-/* ================= PREVENT AUDIO AUTOPLAY ISSUE ================= */
-
-document.addEventListener(
-"visibilitychange",
-()=>{
-
-  if(document.hidden){
-
-    document.title=
-    "Shubh Navratri • 🙏";
-
-  }else{
-
-    document.title=
-    "Shubh Navratri • A Divine Celebration";
-
-  }
 
 });
 
